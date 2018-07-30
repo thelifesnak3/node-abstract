@@ -6,7 +6,7 @@ class Abstract {
         this.generateRoutes()
     }
 
-    getAll() {
+    getAll(req, res) {
         return this._model
             .findAll()
             .then(data => {
@@ -31,7 +31,7 @@ class Abstract {
             })
     }
 
-    getByParam(param){
+    getByParam(req, res){
         return this._model
             .findAll({ where: param })
             .then(data => data)
@@ -41,7 +41,7 @@ class Abstract {
             })
     }
 
-    postCreate(param){
+    postCreate(req, res){
         return this._model
             .create(param)
             .then(data => data)
@@ -51,7 +51,7 @@ class Abstract {
             })
     } 
 
-    putUpdate(body, id){
+    putUpdate(req, res){
         id = parseInt(id)
 
         return this._model
@@ -64,7 +64,7 @@ class Abstract {
 
     }
 
-    delete(id){
+    delete(req, res){
         id = parseInt(id)
 
         return this._model
@@ -77,7 +77,7 @@ class Abstract {
     }
 
     generateRoutes(){
-        this._app.get(`${this._route}`, (req, res) => this.getAll());
+        this._app.get(`${this._route}`, (req, res) => this.getAll(req, res));
         this._app.get(`${this._route}/:id`, (req, res) => this.getById(req, res));
         this._app.post(`${this._route}/search`, (req, res) => this.getByParam(req, res));
         this._app.post(`${this._route}`, (req, res) => this.postCreate(req, res));
