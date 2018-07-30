@@ -8,7 +8,6 @@ const index = require('./src/index.js')
 
 // ROUTES BASE
 app.route_base = '/management'
-app.rh_route_base = app.route_base + '/rh'
 app.usuario_route_base = app.route_base + '/usuario'
 app.estoque_route_base = app.route_base + '/estoque'
 

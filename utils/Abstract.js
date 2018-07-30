@@ -33,7 +33,7 @@ class Abstract {
 
     getByParam(req, res){
         return this._model
-            .findAll({ where: param })
+            .findAll({ where: req.body })
             .then(data => data)
             .catch(error => {
 
@@ -43,7 +43,7 @@ class Abstract {
 
     postCreate(req, res){
         return this._model
-            .create(param)
+            .create(req.body)
             .then(data => data)
             .catch(error => {
 
@@ -52,10 +52,10 @@ class Abstract {
     } 
 
     putUpdate(req, res){
-        id = parseInt(id)
+        id = parseInt(req.params.id)
 
         return this._model
-            .update(body, { where: id })
+            .update(req.body, { where: id })
             .then(data => data)
             .catch(error => {
 
@@ -65,7 +65,7 @@ class Abstract {
     }
 
     delete(req, res){
-        id = parseInt(id)
+        id = parseInt(req.params.id)
 
         return this._model
             .destroy({ where: id })
