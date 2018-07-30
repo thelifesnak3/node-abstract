@@ -1,0 +1,33 @@
+{
+  "name": "node-model",
+  "version": "0.0.1",
+  "description": "Projeto modeo",
+  "main": "app.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon app.js",
+    "start": "cross-env NODE_ENV=production node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thelifesnak3/node-model.git"
+  },
+  "author": "FelipeD3V",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thelifesnak3/node-model/issues"
+  },
+  "homepage": "https://github.com/thelifesnak3/node-model#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bytes": "^3.0.0",
+    "config": "^2.0.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "pg": "^7.4.3",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.3"
+  }
+}

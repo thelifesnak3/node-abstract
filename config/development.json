@@ -1,0 +1,16 @@
+{
+    "serve": {
+        "port": 8888
+    },
+    "sequelize": {
+        "user": "postgres",
+        "database": "innovate",
+        "password": "postgres",
+        "host": "23.239.7.99",
+        "port": "5689",
+        "dialect": "postgres",
+        "max": 10,
+        "idleTimeoutMillis": 3000,
+        "schema": "sistema"
+    }
+}
