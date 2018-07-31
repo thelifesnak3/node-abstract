@@ -4,7 +4,6 @@ const bytes = require('bytes');
 const load = require(`express-load`);
 const config = require('config')
 const app = express();
-const index = require('./src/index.js')
 
 // ROUTES BASE
 app.route_base = '/management'

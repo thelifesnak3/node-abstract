@@ -13,8 +13,7 @@ class Abstract {
                 res.send({err: null, data: data})
             })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
     }
 
@@ -22,30 +21,33 @@ class Abstract {
         let id = parseInt(req.params.id)
         return this._model
             .findOne({ where: id })
-            .then(data => console.log(data.dataValues))
+            .then(data => {
+                res.send({err: null, data: data})
+            })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
     }
 
     getByParam(req, res){
         return this._model
             .findAll({ where: req.body })
-            .then(data => data)
+            .then(data => {
+                res.send({err: null, data: data})
+            })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
     }
 
     postCreate(req, res){
         return this._model
             .create(req.body)
-            .then(data => data)
+            .then(data => {
+                res.send({err: null, data: data})
+            })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
     } 
 
@@ -54,10 +56,11 @@ class Abstract {
 
         return this._model
             .update(req.body, { where: id })
-            .then(data => data)
+            .then(data => {
+                res.send({err: null, data: data})
+            })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
 
     }
@@ -67,10 +70,11 @@ class Abstract {
 
         return this._model
             .destroy({ where: id })
-            .then(data => data)
+            .then(data => {
+                res.send({err: null, data: data})
+            })
             .catch(error => {
-
-                throw error
+                res.send({err: error, data: null})
             })
     }
 
