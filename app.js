@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({limit: bytes('100mb'), extended: true }));
 
 // LOAD DE CONFIGURAÇÕES
 load(`config`)
-    .then('abs_exec')   // Executa todas as classes do Abs Utils.
+    .then('src/abstract_execute')   // Executa todas as classes do Abs Utils.
     .into(app);
 
 app.get('/routes', (req, res) => res.send({stack: app._router.stack}))

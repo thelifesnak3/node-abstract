@@ -1,6 +1,6 @@
 class Abstract {
     constructor(app, model, route) {
-        this._app = app
+        this.app = app
         this._model = model
         this._route = route
         this.generateRoutes()
@@ -10,9 +10,7 @@ class Abstract {
         return this._model
             .findAll()
             .then(data => {
-                data.forEach(function(element) {
-                console.log(element.dataValues)
-                }, this);
+                res.send({err: null, data: data})
             })
             .catch(error => {
 
@@ -77,12 +75,12 @@ class Abstract {
     }
 
     generateRoutes(){
-        this._app.get(`${this._route}`, (req, res) => this.getAll(req, res));
-        this._app.get(`${this._route}/:id`, (req, res) => this.getById(req, res));
-        this._app.post(`${this._route}/search`, (req, res) => this.getByParam(req, res));
-        this._app.post(`${this._route}`, (req, res) => this.postCreate(req, res));
-        this._app.put(`${this._route}/:id`,(req, res) =>  this.putUpdate(req, res));
-        this._app.delete(`${this._route}/:id`,(req, res) =>  this.delete(req, res));
+        this.app.get(`${this._route}`, (req, res) => this.getAll(req, res));
+        this.app.get(`${this._route}/:id`, (req, res) => this.getById(req, res));
+        this.app.post(`${this._route}/search`, (req, res) => this.getByParam(req, res));
+        this.app.post(`${this._route}`, (req, res) => this.postCreate(req, res));
+        this.app.put(`${this._route}/:id`,(req, res) =>  this.putUpdate(req, res));
+        this.app.delete(`${this._route}/:id`,(req, res) =>  this.delete(req, res));
     }
 
 }
