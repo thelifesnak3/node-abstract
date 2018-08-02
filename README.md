@@ -63,7 +63,7 @@ module.exports = app => {
 
     U_abs.app.get(`${app.route_base}/teste`, (req, res) => {         
         
-        // Dentro deste parametro será realizado o serviço desejado
+        // Dentro deste parâmetro será realizado o serviço desejado
         
     })
 
@@ -81,7 +81,7 @@ delete http://localhost:8000/management/usuario/:id
 ```
 
 ### getAll
-Requisição do tipo get, retornará todos os usuários cadastrados no banco. Não é necessário nenhum paramêtro.
+Requisição do tipo get, retornará todos os usuários cadastrados no banco. Não é necessário nenhum parâmetro.
 
 
 ### getById
@@ -89,12 +89,12 @@ Requisição do tipo get, retornará o usuário de acordo com o ID passado pela 
 
 
 ### getByParam
-Requisição do tipo post, retornará o usuário de acordo com o paramêtro passado.
-Modelo do paramêtro -> {nom_nome: "Felipe"}, objeto com atributo de acordo com o banco de dados + valor a ser pesquisado.
+Requisição do tipo post, retornará o usuário de acordo com o parâmetro passado.
+Modelo do parâmetro -> {nom_nome: "Felipe"}, objeto com atributo de acordo com o banco de dados + valor a ser pesquisado.
 
 
 ### postCreate
-Requisição do tipo post, irá cadastrar o usuário no banco. Recebe objeto como paramêtro, o objeto deve segui o modelo do banco de dados.
+Requisição do tipo post, irá cadastrar o usuário no banco. Recebe objeto como parâmetro, o objeto deve segui o modelo do banco de dados.
 Exemplo:
 ```javascript
 {
@@ -117,4 +117,4 @@ Requisição do tipo put, irá realizar update no usuário. Recebe o id do usuá
 
 
 ### delete
-Requisição do tipo delete, irá deletar o usuário do banco. Recebe como paramêtro o id pela url.
+Requisição do tipo delete, irá deletar o usuário do banco. Recebe como parâmetro o id pela url.
