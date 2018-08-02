@@ -1,6 +1,6 @@
 {
     "serve": {
-        "port": 8888
+        "port": 8000
     },
     "sequelize": {
         "user": "postgres",
