@@ -44,8 +44,8 @@ Onde deverá ser configurado de acordo com o modelo a seguir:
 ```javascript
 module.exports = app => {                                                   // Linha padrão
     
-    const $abs = require('../../utils/Abstract.js')                         // Requerindo o abstract o caminho apenas irá mudar no caso do arquivo está dentro de outra pasta, para melhor oranização
-    const Usuario = require('../models/Usuario.js')                         // Requerindo o model o caminho apenas irá mudar no caso do arquivo está dentro de outra pasta, para melhor oranização
+    const $abs = require('../../utils/Abstract.js')                         // Requerindo o abstract, o caminho apenas irá mudar no caso do arquivo está dentro de outra pasta, para melhor organização
+    const Usuario = require('../models/Usuario.js')                         // Requerindo o model, o caminho apenas irá mudar no caso do arquivo está dentro de outra pasta, para melhor organização
     
     const U_abs = $abs.create(app, Usuario, `${app.usuario_route_base}`)    // Criando todos os serviços padrões disponibilizados pelo abstract PARAM1 = nunca irá mudar; PARAM2 = nome da variável utilizada no requerimento da model 
                                                                             // PARAM3 = nome da rota, buscando sempre utilizar as rotas padrões como base que estão definidas no arquivo app.js    
@@ -70,7 +70,7 @@ module.exports = app => {
 }
 ```
 
-Seguinte o modelo a cima você terá os seguintes serviços, disponíveis nas seguintes rotas
+Seguindo o modelo a cima você terá os seguintes serviços, disponíveis nas seguintes rotas
 ```bash
 getAll http://localhost:8000/management/usuario
 getById http://localhost:8000/management/usuario/:id
