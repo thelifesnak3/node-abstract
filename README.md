@@ -71,28 +71,29 @@ module.exports = app => {
 ```
 
 Seguinte o modelo a cima você terá os seguintes serviços, disponíveis nas seguintes rotas
-getAll `http://localhost:8000/management/usuario`
-getById `http://localhost:8000/management/usuario/:id`
-getByParam `http://localhost:8000/management/usuario/search`
-postCreate `http://localhost:8000/management/usuario`
-putUpdate `http://localhost:8000/management/usuario/:id`
-delete `http://localhost:8000/management/usuario/:id`
+```bash
+getAll http://localhost:8000/management/usuario
+getById http://localhost:8000/management/usuario/:id
+getByParam http://localhost:8000/management/usuario/search
+postCreate http://localhost:8000/management/usuario
+putUpdate http://localhost:8000/management/usuario/:id
+delete http://localhost:8000/management/usuario/:id
+```
 
-
-##getAll
+### getAll
 Requisição do tipo get, retornará todos os usuários cadastrados no banco. Não é necessário nenhum paramêtro.
 
 
-##getById
+### getById
 Requisição do tipo get, retornará o usuário de acordo com o ID passado pela url.
 
 
-##getByParam
+### getByParam
 Requisição do tipo post, retornará o usuário de acordo com o paramêtro passado.
 Modelo do paramêtro -> {nom_nome: "Felipe"}, objeto com atributo de acordo com o banco de dados + valor a ser pesquisado.
 
 
-##postCreate
+### postCreate
 Requisição do tipo post, irá cadastrar o usuário no banco. Recebe objeto como paramêtro, o objeto deve segui o modelo do banco de dados.
 Exemplo:
 ```javascript
@@ -104,7 +105,7 @@ Exemplo:
 ```
 
 
-##putUpdate
+### putUpdate
 Requisição do tipo put, irá realizar update no usuário. Recebe o id do usuário a ser alterado pela url + objeto com os campos a serem modificados de a cordo com o exemplo abaixo:
 ```javascript
 {
@@ -115,5 +116,5 @@ Requisição do tipo put, irá realizar update no usuário. Recebe o id do usuá
 ```
 
 
-##delete
+### delete
 Requisição do tipo delete, irá deletar o usuário do banco. Recebe como paramêtro o id pela url.
