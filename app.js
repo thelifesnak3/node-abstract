@@ -33,7 +33,7 @@ const {port} = config.get('serve')
 sequelize.authenticate()
     .then(() => {
         app.listen(port, () => {
-            console.log(`SERVER PORT ${port}`)
+            console.log(`Micro service running on ports: ${port}`)
         });
     })
     .catch(err => console.error('Unable to connect to the database:', err));
